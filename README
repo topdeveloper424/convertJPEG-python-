@@ -1,0 +1,18 @@
+fits2image - Shared library for converting fits files to jpeg, scaling them, etc
+
+The fits2image package provides common libraries for the frame_database and telops
+
+v 0.1.0 - Initial version with conversion code from frame_database
+v 0.1.1 - Changed the fits_to_* functions to return False if they fail (and log warnings), otherwise return True
+        - Added a quality parameter for jpeg conversion quality for fits_to_* functions
+v 0.1.2 - Changed behaviour to automatically use the first quadrant of a data cube, instead of crashing
+v 0.1.3 - If zmax/zmin calculated to be the same, give them a slit offset to avoid dividing by zero
+v 0.1.4 - Check if path exists and create it if not before saving file with pillow.
+v 0.1.5 - Fix problem creating paths
+v 0.2.0 - Add color image support. fits_2_image now accepts list of images, and if will stack them if the list
+is of length 3 and the color=True parameter is set. Expects order to be RVB.
+v 0.2.1 - Remove cosmic ray removal which slows down image generation considerably and misrepresents the actual data
+        - Remove median filter which slows down image generation
+v 0.3.0 - Add median filter support
+v 0.3.1 - Add support for multi extension fits files
+v 0.3.2 - Fix bug in multi extension fits handling
